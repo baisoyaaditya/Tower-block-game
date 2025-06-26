@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+
+html, body {
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: "Comfortaa", cursive;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+}
+
+#score {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 10vh;
+  color: #334;
+  transform: translateY(-200px) scale(1);
+  transition: transform 0.5s ease;
+}
+
+#game {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#instructions {
+  position: absolute;
+  width: 100%;
+  top: 16vh;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#instructions.hide {
+  opacity: 0 !important;
+}
+
+.game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.game-over h2, .game-over p {
+  margin: 0;
+  padding: 0;
+  color: #334;
+}
+
+.game-ready {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#start-button {
+  border: 3px solid #334;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #334;
+  font-size: 30px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* State Styles */
+#container.ready #start-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#container.playing #score {
+  transform: translateY(0px) scale(1);
+}
+
+#container.playing #instructions {
+  opacity: 1;
+}
+
+#container.ended #score {
+  transform: translateY(6vh) scale(1.5);
+}
+
+#container.ended .game-over {
+  opacity: 1;
+}
