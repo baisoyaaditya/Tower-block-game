@@ -1,6 +1,3 @@
-// ERROR-FREE VERSION OF THE STACKING GAME WITH CORRECTED FUNCTIONALITY
-// Required: THREE.js, GSAP (GreenSock Animation Platform)
-
 console.clear();
 
 class Stage {
